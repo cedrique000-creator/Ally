@@ -1,0 +1,656 @@
+/* =========================================================
+   ALLY CONSULT — FLAGSHIP DESIGN SYSTEM
+   Elite Marketing & Business Consulting
+========================================================= */
+
+/* -------------------- RESET -------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------- VARIABLES -------------------- */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f9fafb;
+  --bg-dark: #030712;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --accent: #0ea5e9;
+  --accent-strong: #0284c7;
+
+  --border: #e5e7eb;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.08);
+  --shadow-lg: 0 40px 80px rgba(0,0,0,0.12);
+
+  --max-width: 1200px;
+}
+
+/* -------------------- DARK MODE -------------------- */
+[data-theme="dark"] {
+  --bg: #030712;
+  --bg-soft: #020617;
+  --text-primary: #f9fafb;
+  --text-secondary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border: #1f2937;
+}
+/* =========================================================
+   HOME PAGE — CONVERSION LAYERS
+========================================================= */
+
+/* HERO CTA GROUP */
+.hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* TRUST SIGNALS */
+.trust-bar {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  opacity: 0.85;
+}
+
+.trust-bar span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* METRICS */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric strong {
+  font-size: 2.2rem;
+  display: block;
+  color: var(--accent);
+}
+
+.metric span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* VALUE STRIP */
+.value-strip {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 1.5rem;
+}
+
+.value-strip .grid {
+  align-items: center;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-style: italic;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+}
+/* =========================================================
+   FORMS — CONSULTING GRADE
+========================================================= */
+
+.form-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+}
+
+.form-wrapper h2 {
+  margin-bottom: 0.5rem;
+}
+
+.form-wrapper p {
+  margin-bottom: 2rem;
+}
+
+/* FIELD GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--text-secondary);
+}
+
+/* INPUTS */
+input,
+textarea,
+select {
+  font-family: inherit;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* FOCUS */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.15);
+}
+
+/* FORM GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* SUBMIT */
+.form-submit {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* SUCCESS / ERROR */
+.form-success {
+  background: rgba(14,165,233,0.1);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-error {
+  background: rgba(239,68,68,0.1);
+  border-left: 4px solid #ef4444;
+  padding: 1rem;
+}
+/* =========================================================
+   ESSENTIAL UX / AGENCY POLISH
+========================================================= */
+
+/* SECTION DIVIDER */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border),
+    transparent
+  );
+  margin: 5rem 0;
+}
+
+/* SUBTLE FADE-IN (for Framer Motion fallback) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeIn 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HOVER LINK */
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* BADGES */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(14,165,233,0.1);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* LOADING STATE */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ACCESSIBILITY */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* SELECTION */
+::selection {
+  background: rgba(14,165,233,0.25);
+}
+
+/* -------------------- LAYOUT -------------------- */
+section {
+  padding: 4rem 1.5rem;
+}
+
+.hero {
+  padding: 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* -------------------- TYPOGRAPHY -------------------- */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.editorial p,
+.section-intro {
+  max-width: 640px;
+}
+
+.hero p,
+.service-card p,
+.metric span,
+.form-wrapper p {
+  max-width: none;
+}
+
+
+.section-intro {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+/* -------------------- NAVBAR -------------------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="dark"] nav {
+  background: rgba(3,7,18,0.75);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 1.2rem 2rem;
+  list-style: none;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    120deg,
+    rgba(14,165,233,0.06),
+    rgba(2,132,199,0.02),
+    transparent
+  );
+  animation: none;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero .container {
+  display: grid;
+  gap: 1.8rem;
+  max-width: 760px;
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+}
+
+/* -------------------- BUTTONS -------------------- */
+button,
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* -------------------- MAGNETIC -------------------- */
+.magnetic {
+  transition: transform 0.25s ease;
+}
+
+.magnetic:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* -------------------- GRID SYSTEM -------------------- */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* -------------------- SERVICE CARDS -------------------- */
+.service-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card ul {
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.service-card .outcome {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* -------------------- TEAM -------------------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+  margin-bottom: 1.2rem;
+}
+
+.team-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.team-card .role {
+  color: var(--text-muted);
+}
+
+/* -------------------- CASE STUDIES -------------------- */
+.case-card {
+  background: var(--bg-soft);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--accent);
+}
+
+/* -------------------- PROCESS -------------------- */
+.process {
+  counter-reset: step;
+}
+
+.process li {
+  list-style: none;
+  padding-left: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.process li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+/* -------------------- EDITORIAL -------------------- */
+.editorial {
+  max-width: 760px;
+}
+
+.editorial p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+/* -------------------- FAQ -------------------- */
+.faq div {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* -------------------- CURSOR -------------------- */
+#cursor {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s linear;
+  opacity: 0.6;
+  z-index: 9999;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  background: var(--bg-dark);
+  color: #e5e7eb;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+footer p {
+  color: #9ca3af;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1.2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
